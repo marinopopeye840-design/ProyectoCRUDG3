@@ -1,46 +1,51 @@
 package ni.edu.uam.proyectocrudg3.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Producto {
 
-    private int id_producto;
+    private int idProducto;
     private String codigo;
     private String nombre;
     private String descripcion;
     private double precio;
     private int stock;
-    private Date fecha_creacion;
-    private int id_categoria;
-    private int id_marca;
-    private int estado;
+    private LocalDate fechaCreacion;
+    private int idCategoria;
     private String categoria;
+    private int idMarca;
     private String marca;
+    private int estado;
 
     public Producto() {
+
     }
 
-    public Producto(int id_producto, String codigo, String nombre, String descripcion, double precio, int stock, Date fecha_creacion, int id_categoria, int id_marca, int estado, String categoria, String marca) {
-        this.id_producto = id_producto;
+    public Producto(int idProducto, String codigo, String nombre, String descripcion,
+                    double precio, int stock, LocalDate fechaCreacion,
+                    int idCategoria, String categoria,
+                    int idMarca, String marca, int estado) {
+
+        this.idProducto = idProducto;
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
-        this.fecha_creacion = fecha_creacion;
-        this.id_categoria = id_categoria;
-        this.id_marca = id_marca;
-        this.estado = estado;
+        this.fechaCreacion = fechaCreacion;
+        this.idCategoria = idCategoria;
         this.categoria = categoria;
+        this.idMarca = idMarca;
         this.marca = marca;
+        this.estado = estado;
     }
 
-    public int getId_producto() {
-        return id_producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getCodigo() {
@@ -83,36 +88,20 @@ public class Producto {
         this.stock = stock;
     }
 
-    public Date getFecha_creacion() {
-        return fecha_creacion;
+    public LocalDate getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setFecha_creacion(Date fecha_creacion) {
-        this.fecha_creacion = fecha_creacion;
+    public void setFechaCreacion(LocalDate fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
-    public int getId_categoria() {
-        return id_categoria;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
-    }
-
-    public int getId_marca() {
-        return id_marca;
-    }
-
-    public void setId_marca(int id_marca) {
-        this.id_marca = id_marca;
-    }
-
-    public int getEstado() {
-        return estado;
-    }
-
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getCategoria() {
@@ -123,11 +112,27 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    public int getIdMarca() {
+        return idMarca;
+    }
+
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
+    }
+
     public String getMarca() {
         return marca;
     }
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 }

@@ -1,6 +1,7 @@
 package ni.edu.uam.proyectocrudg3.model;
 
 public class Marca {
+
     private int id_marca;
     private String nombre;
     private String pais_origen;
@@ -8,6 +9,11 @@ public class Marca {
 
     public Marca() {
 
+    }
+
+    public Marca(int id_marca, String nombre) {
+        this.id_marca = id_marca;
+        this.nombre = nombre;
     }
 
     public Marca(int id_marca, String nombre, String pais_origen, int estado) {
@@ -23,6 +29,10 @@ public class Marca {
 
     public void setId_marca(int id_marca) {
         this.id_marca = id_marca;
+    }
+
+    public int getIdMarca() {
+        return id_marca;
     }
 
     public String getNombre() {
@@ -47,5 +57,10 @@ public class Marca {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

@@ -1,6 +1,7 @@
 package ni.edu.uam.proyectocrudg3.model;
 
 public class Categoria {
+
     private int id_categoria;
     private String nombre;
     private String descripcion;
@@ -8,6 +9,11 @@ public class Categoria {
 
     public Categoria() {
 
+    }
+
+    public Categoria(int id_categoria, String nombre) {
+        this.id_categoria = id_categoria;
+        this.nombre = nombre;
     }
 
     public Categoria(int id_categoria, int estado, String descripcion, String nombre) {
@@ -23,6 +29,10 @@ public class Categoria {
 
     public void setId_categoria(int id_categoria) {
         this.id_categoria = id_categoria;
+    }
+
+    public int getIdCategoria() {
+        return id_categoria;
     }
 
     public String getNombre() {
@@ -47,5 +57,10 @@ public class Categoria {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }
