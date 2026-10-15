@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="823.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.proyectocrudg3.controller.ProductoController">
+    <children>
+        <Label layoutX="37.0" layoutY="27.0" text="Gestión de Productos">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Separator layoutX="-12.0" layoutY="63.0" prefHeight="15.0" prefWidth="887.0" />
+
+        <GridPane layoutX="37.0" layoutY="92.0" prefHeight="132.0" prefWidth="650.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="66.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="195.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="93.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="265.0" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+
+            <children>
+                <Label text="Código:" />
+
+                <TextField fx:id="txtCodigo" prefHeight="25.0" prefWidth="181.0" promptText="Ingrese el codigo del producto" GridPane.columnIndex="1" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="56.0" text="Nombre:" GridPane.columnIndex="2" />
+
+                <TextField fx:id="txtNombre" promptText="Nombre del producto" GridPane.columnIndex="3" />
+
+                <Label text="Precio:" GridPane.rowIndex="1" />
+
+                <TextField fx:id="txtPrecio" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="42.0" text="Stock:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                <TextField fx:id="txtStock" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label text="Categoría:" GridPane.rowIndex="2" />
+
+                <ComboBox fx:id="cmbCategoria" prefHeight="25.0" prefWidth="188.0" promptText="Seleccione la categoria" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="47.0" text="Marca:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                <ComboBox fx:id="cmbMarca" prefWidth="150.0" promptText="Seleccione la marca" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <Label text="Fecha:" GridPane.rowIndex="3" />
+
+                <DatePicker fx:id="dtpFecha" prefWidth="188.0" promptText="Ingrese la fecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="77.0" text="Descripción:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+                <TextField fx:id="txtDescripcion" promptText="Descripcion" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+
+        <HBox layoutX="37.0" layoutY="229.0" prefHeight="37.0" prefWidth="290.0" spacing="10.0">
+            <children>
+                <Button fx:id="btnNuevoRegistro" mnemonicParsing="false" onAction="#crearRegistro" text="Nuevo" />
+                <Button fx:id="btnGuardarRegistro" mnemonicParsing="false" onAction="#guardarRegistro" text="Guardar" />
+                <Button fx:id="btnActualizarRegistro" mnemonicParsing="false" onAction="#actualizarRegistro" text="Actualizar" />
+                <Button fx:id="btnEliminarRegistro" mnemonicParsing="false" onAction="#eliminarRegistro" text="Eliminar" />
+            </children>
+        </HBox>
+
+        <Separator layoutY="265.0" prefHeight="15.0" prefWidth="875.0" />
+
+        <Label layoutX="37.0" layoutY="288.0" text="Búsqueda y filtros">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <GridPane layoutX="39.0" layoutY="330.0" prefHeight="94.0" prefWidth="650.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="189.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="91.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="193.0" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+
+            <children>
+                <Label text="Código o nombre:" />
+
+                <TextField fx:id="txtCodigoNombre" promptText="Buscar..." GridPane.columnIndex="1" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="63.0" text="Categoría:" GridPane.columnIndex="2" />
+
+                <ComboBox fx:id="cmbCategoriaFiltro" prefHeight="25.0" prefWidth="193.0" promptText="Seleccione la categoria" GridPane.columnIndex="3" />
+
+                <Label text="Desde:" GridPane.rowIndex="1" />
+
+                <DatePicker fx:id="dtpDesde" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="43.0" text="Hasta:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                <DatePicker fx:id="dtpHasta" prefHeight="25.0" prefWidth="194.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label text="Precio mínimo:" GridPane.rowIndex="2" />
+
+                <TextField fx:id="txtPrecioMinimo" promptText="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="90.0" text="Precio máximo:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                <TextField fx:id="txtPrecioMaximo" promptText="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+
+        <HBox layoutX="37.0" layoutY="430.0" prefHeight="30.0" prefWidth="374.0" spacing="120.0">
+            <children>
+                <CheckBox fx:id="chkProductosExistencia" mnemonicParsing="false" text="Solo productos con existencias" />
+                <Label text="Ordenar por" />
+            </children>
+        </HBox>
+
+        <ComboBox fx:id="cmbOrdenar" layoutX="421.0" layoutY="430.0" prefHeight="25.0" prefWidth="193.0" />
+
+        <HBox layoutX="37.0" layoutY="459.0" prefHeight="37.0" prefWidth="200.0" spacing="10.0">
+            <children>
+                <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarProducto" text="Buscar" />
+                <Button fx:id="btnLimpiarFiltro" mnemonicParsing="false" onAction="#limpiarFiltro" text="Limpiar filtro" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="tblProductos" layoutX="38.0" layoutY="496.0" prefHeight="313.0" prefWidth="796.0">
+            <columns>
+                <TableColumn fx:id="colCodigo" prefWidth="76.0" text="Código" />
+                <TableColumn fx:id="colNombre" prefWidth="149.0" text="Nombre" />
+                <TableColumn fx:id="colCategoria" prefWidth="126.0" text="Categoría" />
+                <TableColumn fx:id="colMarca" prefWidth="136.0" text="Marca" />
+                <TableColumn fx:id="colPrecio" prefWidth="98.0" text="Precio" />
+                <TableColumn fx:id="colStock" prefWidth="81.0" text="Stock" />
+                <TableColumn fx:id="colFechaCreacion" prefWidth="129.0" text="Fecha creación" />
+            </columns>
+
+            <placeholder>
+                <Label text="Tabla sin contenido" />
+            </placeholder>
+        </TableView>
+
+    </children>
+</AnchorPane>
